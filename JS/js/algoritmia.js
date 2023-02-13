@@ -58,4 +58,28 @@ function problema1(){
     document.querySelector('#p1-output').textContent = 'Palabra al reves: ' + fraseInvertida;
 }
 
-  
+function problema3(){
+    var alfmayus = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ];
+    var obtener = document.getElementById("p3-input").value;
+    var separar = obtener.split(",");
+    palabras = separar.map(function(letras){
+        return letras.replace(/\s/g, "").toUpperCase();
+    });
+    caracterunico = "";
+    palabras.forEach(function(letras, i){
+        var variableUnica = [];
+        var arreglo = letras.split("");
+        alfmayus.forEach(function(letras, j){
+            arreglo.forEach(function(cadaLetra, K){
+                if (cadaLetra == letras){
+                    if(variableUnica.indexOf(letras) < 0){
+                        variableUnica.push(letras);
+                    }
+                }
+            });
+        });
+        caracterunico += "Palabra "+letras+ " = " +variableUnica.length + "\n";
+    });
+
+    document.querySelector('#p3-output').textContent = '' + caracterunico;
+}
