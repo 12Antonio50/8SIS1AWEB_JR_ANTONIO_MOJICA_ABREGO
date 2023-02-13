@@ -1,6 +1,5 @@
 *{
     margin: 0;
-    padding: 5px;
     box-sizing: border-box;
     text-align: justify;
 }
@@ -17,6 +16,7 @@ body{
 
 .title{
     color: #fff;
+
 }
 form{
     color: #fff;
